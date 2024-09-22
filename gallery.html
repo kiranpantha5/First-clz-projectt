@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gorkhali Gym - Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="gallery.css?v=1.0">
+    </head>
+
+<body>
+    <!-- Existing content... -->
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="gallery1.png" alt="Gallery Image 1" data-large="path/to/photo1-large.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery2.png" alt="Gallery Image 2" data-large="path/to/photo2-large.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery3.png" alt="Gallery Image 3" data-large="path/to/photo3-large.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery4.png" alt="Gallery Image 4" data-large="path/to/photo4-large.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery5.png" alt="Gallery Image 5" data-large="path/to/photo5-large.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery6.png" alt="Gallery Image 6" data-large="path/to/photo6-large.jpg">
+            </div>
+          
+            <div class="gallery-item">
+                <img src="gallery7.png" alt="Gallery Image 7" data-large="path/to/photo7-large.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery8.png" alt="Gallery Image 8" data-large="path/to/photo8-large.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery9.png" alt="Gallery Image 9" data-large="path/to/photo9-large.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery10.png" alt="Gallery Image 10" data-large="path/to/photo10
+                -large.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery11.png" alt="Gallery Image 11" data-large="path/to/photo11-large.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery12.png" alt="Gallery Image 12" data-large="path/to/photo12-large.jpg">
+            </div>
+           
+
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" src="gallery1.png" alt="photo1-large">
+        <div id="caption"></div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </div>
+
+    <!-- Existing content... -->
+
+    <script>
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const caption = document.getElementById('caption');
+    const closeBtn = document.querySelector('.close');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    let currentIndex = 0;
+
+    function showLightbox(index) {
+        const images = Array.from(galleryItems);
+        if (index >= 0 && index < images.length) {
+            currentIndex = index;
+            const img = images[index];
+            lightboxImg.src = img.getAttribute('data-large');
+            caption.textContent = img.alt;
+            lightbox.style.display = 'flex';
+        }
+    }
+
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', function () {
+            showLightbox(index);
+        });
+    });
+
+    closeBtn.addEventListener('click', function () {
+        lightbox.style.display = 'none';
+    });
+
+    prevBtn.addEventListener('click', function () {
+        if (currentIndex > 0) {
+            showLightbox(currentIndex - 1);
+        }
+    });
+
+    nextBtn.addEventListener('click', function () {
+        if (currentIndex < galleryItems.length - 1) {
+            showLightbox(currentIndex + 1);
+        }
+    });
+
+    lightbox.addEventListener('click', function (event) {
+        if (event.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+
+    // Optional: Allow navigating with keyboard arrows
+    document.addEventListener('keydown', function (event) {
+        if (lightbox.style.display === 'flex') {
+            if (event.key === 'ArrowLeft') {
+                prevBtn.click();
+            }
+            if (event.key === 'ArrowRight') {
+                nextBtn.click();
+            }
+        }
+    });
+});
+
+
+    </script>
+    
+
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f3;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #333, #FFD700);
+    color: white;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.about-us:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-align: center;
+}
+
+/* About Us Heading */
+h1 {
+    font-size: 60px;
+    color: #FFD700;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+/* About Us Intro */
+.about-intro {
+    font-size: 20px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    animation: fadeIn 2s ease;
+}
+
+/* About Content Boxes */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+/* Individual Boxes */
+.about-box {
+    background-color: #444;
+    padding: 20px;
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1.5s ease;
+}
+
+
+
+.about-box h2 {
+    font-size: 28px;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.about-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* Call-to-action */
+.cta {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.cta a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.cta a:hover {
+    border-bottom: 2px solid #FFD700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-box {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
