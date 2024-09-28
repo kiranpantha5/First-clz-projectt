@@ -13,12 +13,14 @@ body {
 .banner {
     background-image: url('background.jpg'); 
     background-size: cover;
+    background-position: center;
     height: 100vh;
 }
 
 /* Overlay */
 .overlay {
     background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -189,6 +191,7 @@ h2 {
     font-size: 1.3vw; /* Responsive font size */
     border-radius: 5px;
     transition: background-color 0.3s; /* Smooth transition */
+    
 }
 
 .btn:hover {
@@ -224,22 +227,30 @@ h2 {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 8vw; /* Smaller font size */
+        font-size: 9vw; /* Smaller font size */
     }
 
     h2 {
-        font-size: 6vw; /* Smaller font size */
+        font-size: 7vw; /* Smaller font size */
     }
 
     .p1 {
-        font-size: 4vw; /* Smaller font size */
+        font-size: 5vw; /* Smaller font size */
     }
 
     .btn {
-        padding: 4% 10%; /* Adjust button size */
+        font-size: 12px;
+        margin-bottom: 40px;
     }
 }
 
+
+
+@media (max-width: 900px) {
+    .btn{
+        font-size: 16px;
+    }
+}
 
 
 
